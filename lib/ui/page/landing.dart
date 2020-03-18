@@ -1,4 +1,5 @@
 import 'package:cv/consts/hero.dart';
+import 'package:cv/ui/widget/colorful_bottom_navigation.dart';
 import 'package:cv/ui/widget/text_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -9,6 +10,22 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Neumorphic(
+        style: NeumorphicStyle(
+            shape: NeumorphicShape.flat,
+            color: Theme.of(context).backgroundColor,
+            lightSource: LightSource.bottom,
+            depth: 4.0),
+        boxShape: NeumorphicBoxShape.roundRect(),
+        child: ColorfulBottomNavigation(
+          children: [
+            ColorfulBottomNavigationItem(image: AssetImage('assets/images/ic_account_outline_white.png'), text: 'Profile', color: Color(0xFFD51515)),
+            ColorfulBottomNavigationItem(image: AssetImage('assets/images/ic_book_open_outline_white.png'), text: 'Portfolio', color: Color(0xFFE57910)),
+            ColorfulBottomNavigationItem(image: AssetImage('assets/images/ic_information_outline_white.png'), text: 'About', color: Color(0xFF104E5A)),
+            ColorfulBottomNavigationItem(image: AssetImage('assets/images/ic_pinwheel_outline_white.png'), text: 'Playground', color: Color(0xFF040B11)),
+          ],
+        ),
+      ),
       body: SafeArea(
           child: Stack(children: [
         Center(
@@ -39,7 +56,7 @@ class LandingPage extends StatelessWidget {
                             style: NeumorphicStyle(
                                 shape: NeumorphicShape.flat,
                                 color: Theme.of(context).backgroundColor,
-                                lightSource: LightSource.topLeft,
+                                lightSource: LightSource.bottom,
                                 depth: 4.0),
                             child: FadeInImage(
                               image: AssetImage('assets/images/profil.jpeg'),
