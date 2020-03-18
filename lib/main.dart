@@ -13,7 +13,7 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) => AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
-          statusBarIconBrightness: Brightness.dark),
+          statusBarIconBrightness: Brightness.light),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

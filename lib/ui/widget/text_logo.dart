@@ -1,3 +1,4 @@
+import 'package:cv/ui/animation/hero_tween.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,8 +14,9 @@ import 'package:google_fonts/google_fonts.dart';
 class TextLogo extends StatelessWidget {
   final String text;
   final String tag;
+  final CreateRectTween createRectTween;
 
-  TextLogo({@required this.text, this.tag});
+  TextLogo({@required this.text, this.tag, this.createRectTween});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,7 @@ class TextLogo extends StatelessWidget {
         ? _getText(context)
         : Hero(
             tag: tag,
+            createRectTween: createRectTween,
             child: _getText(context),
           );
   }

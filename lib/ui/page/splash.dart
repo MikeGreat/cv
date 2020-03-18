@@ -1,3 +1,5 @@
+import 'package:cv/ui/animation/fade_page_route_builder.dart';
+import 'package:cv/ui/animation/hero_tween.dart';
 import 'package:cv/ui/page/landing.dart';
 import 'package:flutter/material.dart';
 import 'package:cv/consts/hero.dart';
@@ -43,10 +45,7 @@ class _SplashPageState extends State<SplashPage> {
             onEnd: () {
               Navigator.pushReplacement(
                 context,
-                PageRouteBuilder(
-                  // TODO: transitionBuilder should help with crossfading to Landing page
-                    transitionDuration: Duration(milliseconds: 1000),
-                    pageBuilder: (_, __, ___) => LandingPage()),
+                FadePageRouteBuilder(page: LandingPage(), transitionDuration: Duration(seconds: 1)),
               );
             },
             opacity: _opacity,
@@ -55,6 +54,9 @@ class _SplashPageState extends State<SplashPage> {
             child: TextLogo(
               text: 'Ján Kandráč',
               tag: HERO_TAG_NAME,
+              createRectTween: (begin, end) {
+                return CustomCurveRectTween(a: begin, b: end, curve: Curves.easeInOut);
+              },
             ),
           ),
         ),
