@@ -20,6 +20,7 @@ class Application extends StatelessWidget {
           brightness: Brightness.dark,
           primarySwatch: Colors.blueGrey,
           backgroundColor: Colors.blueGrey,
+          scaffoldBackgroundColor: Colors.blueGrey,
           splashColor: Colors.blueGrey,
         ),
         home: SplashPage(),

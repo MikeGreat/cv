@@ -2,14 +2,14 @@ import 'package:cv/consts/hero.dart';
 import 'package:cv/ui/widget/text_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Theme.of(context).backgroundColor,
-      child: SafeArea(
+    return Scaffold(
+      body: SafeArea(
           child: Stack(children: [
         Center(
           child: Column(
@@ -37,8 +37,15 @@ class LandingPage extends StatelessWidget {
                           child: Neumorphic(
                             boxShape: NeumorphicBoxShape.circle(),
                             style: NeumorphicStyle(
-                                lightSource: LightSource.topLeft, depth: 4.0),
-                            child: Image.asset('assets/images/profil.jpeg'),
+                                shape: NeumorphicShape.flat,
+                                color: Theme.of(context).backgroundColor,
+                                lightSource: LightSource.topLeft,
+                                depth: 4.0),
+                            child: FadeInImage(
+                              image: AssetImage('assets/images/profil.jpeg'),
+                              placeholder: MemoryImage(kTransparentImage),
+                              fadeInDuration: Duration(milliseconds: 300),
+                            ),
                           ),
                         ),
                       ),
