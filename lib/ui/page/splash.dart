@@ -1,5 +1,5 @@
+import 'package:cv/main.dart';
 import 'package:cv/ui/animation/fade_page_route_builder.dart';
-import 'package:cv/ui/animation/hero_tween.dart';
 import 'package:cv/ui/page/landing.dart';
 import 'package:flutter/material.dart';
 import 'package:cv/consts/hero.dart';
@@ -22,8 +22,14 @@ class SplashPage extends StatefulWidget {
   _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashPageState extends State<SplashPage> with RouteAware {
   double _opacity = 0;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    heroRouteObserver.subscribe(this, ModalRoute.of(context));
+  }
 
   @override
   void initState() {
@@ -45,7 +51,7 @@ class _SplashPageState extends State<SplashPage> {
             onEnd: () {
               Navigator.pushReplacement(
                 context,
-                FadePageRouteBuilder(page: LandingPage(), transitionDuration: Duration(seconds: 1)),
+                FadePageRouteBuilder(page: LandingPage(), transitionDuration: Duration(seconds: 5)),
               );
             },
             opacity: _opacity,
@@ -53,10 +59,7 @@ class _SplashPageState extends State<SplashPage> {
             curve: Curves.easeIn,
             child: TextLogo(
               text: 'Ján Kandráč',
-              tag: HERO_TAG_NAME,
-              createRectTween: (begin, end) {
-                return CustomCurveRectTween(a: begin, b: end, curve: Curves.easeInOut);
-              },
+              tag: HERO_TAG_NAME
             ),
           ),
         ),
