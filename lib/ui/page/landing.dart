@@ -71,7 +71,9 @@ class LandingPage extends StatelessWidget {
                       ),
                       Text('Curriculum',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.headline6),
+                          style: TextStyle(
+                            fontSize: 16.0
+                          )),
                       SizedBox(
                         height: 16,
                       ),

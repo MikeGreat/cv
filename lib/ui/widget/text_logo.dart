@@ -1,4 +1,3 @@
-import 'package:cv/ui/animation/hero_tween.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,7 +34,7 @@ class TextLogo extends StatelessWidget {
           fontWeight: FontWeight.w800,
           letterSpacing: 1.5,
           color: Colors.white,
-          textStyle: Theme.of(context).textTheme.headline4,
+          textStyle: TextStyle(fontSize: 28.0),
         ),
       );
 }
