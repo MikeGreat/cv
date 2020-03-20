@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "316117334256",
+    "firebase_url": "https://kandrac-cv.firebaseio.com",
+    "project_id": "kandrac-cv",
+    "storage_bucket": "kandrac-cv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316117334256:android:b342ee355366d647306a35",
+        "android_client_info": {
+          "package_name": "xyz.kandrac.cv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316117334256-ak4v0prddao98qvv18sevk5puu69r7g5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xyz.kandrac.cv",
+            "certificate_hash": "7a460c241f9996b8a0fe23f824e32335953409b6"
+          }
+        },
+        {
+          "client_id": "316117334256-2riqak2ivabp7g2nur64961phb5q9hup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuXuCU-uHM3_LXCje9MBafpGOEM6II09w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316117334256-2riqak2ivabp7g2nur64961phb5q9hup.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

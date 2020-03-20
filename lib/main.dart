@@ -1,8 +1,16 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cv/ui/page/splash.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
-void main() => runApp(Application());
+FirebaseAnalytics analytics = FirebaseAnalytics();
+
+void main() {
+  FlutterError.onError = Crashlytics.instance.recordFlutterError;
+  runApp(Application());
+}
 
 ///
 /// This is my common application widget. It contains only [MaterialApp] widget
@@ -23,6 +31,9 @@ class Application extends StatelessWidget {
           scaffoldBackgroundColor: Colors.blueGrey,
           splashColor: Colors.blueGrey,
         ),
+        navigatorObservers: [
+          FirebaseAnalyticsObserver(analytics: analytics),
+        ],
         home: SplashPage(),
       ));
 }
