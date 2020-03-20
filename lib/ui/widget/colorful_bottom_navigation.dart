@@ -11,8 +11,9 @@ class ColorfulBottomNavigationItem {
   final ImageProvider image;
   final String text;
   final Color color;
+  final VoidCallback onTap;
 
-  ColorfulBottomNavigationItem({this.image, this.text, this.color});
+  ColorfulBottomNavigationItem({this.image, this.text, this.color, this.onTap});
 
   @override
   bool operator ==(Object other) =>
@@ -84,6 +85,7 @@ class _ColorfulBottomNavigationState extends State<ColorfulBottomNavigation>
                                 widget.children.length,
                             curve: Curves.easeInOut);
                       });
+                      entry.value.onTap();
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
