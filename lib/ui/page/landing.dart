@@ -1,7 +1,7 @@
 import 'package:cv/consts/hero.dart';
 import 'package:cv/ui/page/about.dart';
 import 'package:cv/ui/page/playground.dart';
-import 'package:cv/ui/page/portfolio.dart';
+import 'package:cv/ui/page/portfolio/portfolio.dart';
 import 'package:cv/ui/page/profile.dart';
 import 'package:cv/ui/widget/colorful_bottom_navigation.dart';
 import 'package:cv/ui/widget/text_logo.dart';
