@@ -1,3 +1,4 @@
+import 'package:cv/localization/app_localization.dart';
 import 'package:cv/ui/page/portfolio/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +27,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                       );
                     });
               } else if (state is ErrorPortfolioState) {
-                return Center(child: Text("Error"));
+                return Center(child: Text(AppLocalizations.of(context).portfolioError));
               } else {
                 return Center(child: CircularProgressIndicator());
               }

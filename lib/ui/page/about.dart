@@ -1,3 +1,4 @@
+import 'package:cv/localization/app_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -30,23 +31,12 @@ class AboutPage extends StatelessWidget {
         SizedBox(
           height: 24,
         ),
-        Text('Curriculum',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16.0)),
         SizedBox(
           height: 16,
         ),
         Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Text('''Hi.
-
-Welcome to my minimalistic CV application.
-
-I've myself promise, I'll add at least 1 new feature every single week. This way I'll be able to progress with my self study of Flutter. Yes this application will be about flutter development.
-
-Hope you will like it more and more.
-Next non developemnt step -> actual CV
-                        '''),
+          child: Text(AppLocalizations.of(context).aboutText),
         )
       ],
     );

@@ -1,9 +1,11 @@
+import 'package:cv/localization/app_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cv/ui/page/splash.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 FirebaseAnalytics analytics = FirebaseAnalytics();
 
@@ -24,6 +26,16 @@ class Application extends StatelessWidget {
           statusBarIconBrightness: Brightness.light),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('en'),
+          const Locale('sk'),
+        ],
         theme: ThemeData(
           brightness: Brightness.dark,
           primarySwatch: Colors.blueGrey,

@@ -1,3 +1,4 @@
+import 'package:cv/localization/app_localization.dart';
 import 'package:cv/ui/animation/fade_page_route_builder.dart';
 import 'package:cv/ui/animation/hero_tween.dart';
 import 'package:cv/ui/page/landing.dart';
@@ -52,7 +53,7 @@ class _SplashPageState extends State<SplashPage> {
             duration: Duration(seconds: 2),
             curve: Curves.easeIn,
             child: TextLogo(
-              text: 'Ján Kandráč',
+              text: AppLocalizations.of(context).logoText,
               tag: HERO_TAG_NAME,
               createRectTween: (begin, end) {
                 return CustomCurveRectTween(a: begin, b: end, curve: Curves.easeInOut);

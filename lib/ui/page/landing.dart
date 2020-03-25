@@ -1,4 +1,5 @@
 import 'package:cv/consts/hero.dart';
+import 'package:cv/localization/app_localization.dart';
 import 'package:cv/ui/page/about.dart';
 import 'package:cv/ui/page/playground.dart';
 import 'package:cv/ui/page/portfolio/portfolio.dart';
@@ -44,24 +45,24 @@ class LandingPage extends StatelessWidget {
             ColorfulBottomNavigationItem(
                 image: AssetImage(
                     'assets/images/ic_information_outline_white.png'),
-                text: 'About',
+                text: AppLocalizations.of(context).landingTabAbout,
                 color: Color(0xFFD51515),
                 onTap: onAboutClick),
             ColorfulBottomNavigationItem(
                 image: AssetImage('assets/images/ic_account_outline_white.png'),
-                text: 'Profile',
+                text: AppLocalizations.of(context).landingTabProfile,
                 color: Color(0xFFE57910),
                 onTap: onProfileClick),
             ColorfulBottomNavigationItem(
                 image:
                     AssetImage('assets/images/ic_book_open_outline_white.png'),
-                text: 'Portfolio',
+                text: AppLocalizations.of(context).landingTabPortfolio,
                 color: Color(0xFF104E5A),
                 onTap: onPortfolioClick),
             ColorfulBottomNavigationItem(
                 image:
                     AssetImage('assets/images/ic_pinwheel_outline_white.png'),
-                text: 'Playground',
+                text: AppLocalizations.of(context).landingTabPlayground,
                 color: Color(0xFF040B11),
                 onTap: onPlaygroundClick),
           ],
@@ -77,7 +78,7 @@ class LandingPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: TextLogo(
-                    text: 'Ján Kandráč',
+                    text: AppLocalizations.of(context).logoText,
                     tag: HERO_TAG_NAME,
                   ),
                 ),
