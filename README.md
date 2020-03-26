@@ -10,9 +10,9 @@ also find links to files meant for "skill presentation purposes" here.
 
 ## Screens
 
-|                                                                       |                                                                           |
-|-----------------------------------------------------------------------|---------------------------------------------------------------------------|
-|<img src="./presentation/001-splash.png" alt="alt text" width="200">   |   <img src="./presentation/002-landing.png" alt="alt text" width="200">   |
+|                                                                       |                                                                        |                                                                           |
+|-----------------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------------------------------|
+|<img src="./presentation/001-splash.png" alt="alt text" width="200">   |<img src="./presentation/002-landing.png" alt="alt text" width="200">   |<img src="./presentation/003-portfolio.png" alt="alt text" width="200">    |
 
 
 ## Used technologies and libraries (so far)
