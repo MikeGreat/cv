@@ -8,26 +8,35 @@ import 'package:cv/ui/widget/colorful_bottom_navigation.dart';
 import 'package:cv/ui/widget/text_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:transparent_image/transparent_image.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
+  @override
+  _LandingPageState createState() => _LandingPageState();
+}
 
-  PageController pageViewController = PageController();
+class _LandingPageState extends State<LandingPage> {
+  int currentIndex = 0;
 
   void onAboutClick() {
-    pageViewController.animateToPage(0, duration: Duration(seconds: 1), curve: Curves.easeInOut);
+    changeCurrentPage(0);
   }
 
   void onProfileClick() {
-    pageViewController.animateToPage(1, duration: Duration(seconds: 1), curve: Curves.easeInOut);
+    changeCurrentPage(1);
   }
 
   void onPortfolioClick() {
-    pageViewController.animateToPage(2, duration: Duration(seconds: 1), curve: Curves.easeInOut);
+    changeCurrentPage(2);
   }
 
   void onPlaygroundClick() {
-    pageViewController.animateToPage(3, duration: Duration(seconds: 1), curve: Curves.easeInOut);
+    changeCurrentPage(3);
+  }
+
+  void changeCurrentPage(int index) {
+    setState(() {
+      currentIndex = index;
+    });
   }
 
   @override
@@ -86,18 +95,26 @@ class LandingPage extends StatelessWidget {
                   height: 16,
                 ),
                 Expanded(
-                    child: PageView(
-                      controller: pageViewController,
-                  children: <Widget>[
-                    AboutPage(),
-                    ProfilePage(),
-                    PortfolioPage(),
-                    PlaygroundPage()
-                  ],
-                )),
+                  child: getContent(),
+                ),
               ]),
         ),
       ])),
     );
+  }
+
+  Widget getContent() {
+    switch (currentIndex) {
+      case 0:
+        return AboutPage();
+      case 1:
+        return ProfilePage();
+      case 2:
+        return PortfolioPage();
+      case 3:
+        return PlaygroundPage();
+      default:
+        throw Exception("Only 4 pages available - choose page in range <0;3>");
+    }
   }
 }
