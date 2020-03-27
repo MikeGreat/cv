@@ -15,7 +15,14 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  int currentIndex = 0;
+  static final List<Widget> pages = [
+    AboutPage(),
+    ProfilePage(),
+    PortfolioPage(),
+    PlaygroundPage()
+  ];
+
+  Widget _currentPage = pages[0];
 
   void onAboutClick() {
     changeCurrentPage(0);
@@ -35,7 +42,7 @@ class _LandingPageState extends State<LandingPage> {
 
   void changeCurrentPage(int index) {
     setState(() {
-      currentIndex = index;
+      _currentPage = pages[index];
     });
   }
 
@@ -95,26 +102,13 @@ class _LandingPageState extends State<LandingPage> {
                   height: 16,
                 ),
                 Expanded(
-                  child: getContent(),
+                  child: AnimatedSwitcher(
+                      duration: Duration(milliseconds: 500),
+                      child: _currentPage),
                 ),
               ]),
         ),
       ])),
     );
-  }
-
-  Widget getContent() {
-    switch (currentIndex) {
-      case 0:
-        return AboutPage();
-      case 1:
-        return ProfilePage();
-      case 2:
-        return PortfolioPage();
-      case 3:
-        return PlaygroundPage();
-      default:
-        throw Exception("Only 4 pages available - choose page in range <0;3>");
-    }
   }
 }
