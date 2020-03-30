@@ -49,14 +49,8 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Neumorphic(
-        style: NeumorphicStyle(
-            shape: NeumorphicShape.flat,
-            color: Theme.of(context).backgroundColor,
-            lightSource: LightSource.bottom,
-            depth: 4.0),
-        boxShape: NeumorphicBoxShape.roundRect(),
-        child: ColorfulBottomNavigation(
+      bottomNavigationBar:
+        ColorfulBottomNavigation(
           children: [
             ColorfulBottomNavigationItem(
                 image: AssetImage(
@@ -82,7 +76,6 @@ class _LandingPageState extends State<LandingPage> {
                 color: Color(0xFF040B11),
                 onTap: onPlaygroundClick),
           ],
-        ),
       ),
       body: SafeArea(
           child: Stack(children: [
