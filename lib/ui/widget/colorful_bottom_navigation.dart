@@ -97,13 +97,10 @@ class _ColorfulBottomNavigationState extends State<ColorfulBottomNavigation>
                         child: Center(
                           child: AnimatedBuilder(
                             animation: _animationController,
-                            builder: (context, child) => Expanded(
-                              flex: 1,
-                              child: Opacity(
-                                  opacity: getOpacity(
-                                      _animationController.value, entry.key),
-                                  child: child),
-                            ),
+                            builder: (context, child) => Opacity(
+                                opacity: getOpacity(
+                                    _animationController.value, entry.key),
+                                child: child),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
