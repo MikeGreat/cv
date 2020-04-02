@@ -1,5 +1,12 @@
+import 'package:cv/ui/page/playground/implicit/animated_align.dart';
 import 'package:cv/ui/page/playground/implicit/animated_container.dart';
+import 'package:cv/ui/page/playground/implicit/animated_crossfade.dart';
+import 'package:cv/ui/page/playground/implicit/animated_icon.dart';
 import 'package:cv/ui/page/playground/implicit/animated_opacity.dart';
+import 'package:cv/ui/page/playground/implicit/animated_padding.dart';
+import 'package:cv/ui/page/playground/implicit/animated_positioned.dart';
+import 'package:cv/ui/page/playground/implicit/animated_size.dart';
+import 'package:cv/ui/page/playground/implicit/animated_switcher.dart';
 import 'package:flutter/material.dart';
 
 class ImplicitAnimationSubPage {
@@ -10,23 +17,28 @@ class ImplicitAnimationSubPage {
 }
 
 class ImplicitAnimationsPage extends StatefulWidget {
-
   @override
   _ImplicitAnimationsPageState createState() => _ImplicitAnimationsPageState();
 }
 
 class _ImplicitAnimationsPageState extends State<ImplicitAnimationsPage> {
-
   static final List<ImplicitAnimationSubPage> subPages = [
     ImplicitAnimationSubPage(title: 'AnimatedOpacity', samplePage: AnimatedOpacityPage()),
-    ImplicitAnimationSubPage(title: 'AnimatedContainer', samplePage: AnimatedContainerPage())
+    ImplicitAnimationSubPage(title: 'AnimatedContainer', samplePage: AnimatedContainerPage()),
+    ImplicitAnimationSubPage(title: 'AnimatedAlign', samplePage: AnimatedAlignPage()),
+    ImplicitAnimationSubPage(title: 'AnimatedSize', samplePage: AnimatedSizePage()),
+    ImplicitAnimationSubPage(title: 'AnimatedCrossFade', samplePage: AnimatedCrossFadePage()),
+    ImplicitAnimationSubPage(title: 'AnimatedIcon', samplePage: AnimatedIconPage()),
+    ImplicitAnimationSubPage(title: 'AnimatedPadding', samplePage: AnimatedPaddingPage()),
+    ImplicitAnimationSubPage(title: 'AnimatedPositioned', samplePage: AnimatedPositionedPage()),
+    ImplicitAnimationSubPage(title: 'AnimatedSwitcher', samplePage: AnimatedSwitcherPage()),
   ];
 
   ImplicitAnimationSubPage subPage = subPages[0];
 
-  void selectPage(int id) {
+  void selectPage(ImplicitAnimationSubPage page) {
     setState(() {
-      subPage = subPages[id];
+      subPage = page;
     });
     Navigator.of(context).pop();
   }
@@ -39,18 +51,13 @@ class _ImplicitAnimationsPageState extends State<ImplicitAnimationsPage> {
       ),
       drawer: Drawer(
         child: ListView(
-          children: <Widget>[
-            ListTile(title: Text(subPages[0].title), onTap: () { selectPage(0); }),
-            ListTile(title: Text(subPages[1].title), onTap: () { selectPage(1); }),
-            ListTile(title: Text('AnimatedAlign')),
-            ListTile(title: Text('AnimatedSize')),
-            ListTile(title: Text('AnimatedCrossFade')),
-            ListTile(title: Text('AnimatedCrossFade')),
-            ListTile(title: Text('AnimatedIcon')),
-            ListTile(title: Text('AnimatedPadding')),
-            ListTile(title: Text('AnimatedPositioned')),
-            ListTile(title: Text('AnimatedSwitcher')),
-          ],
+          children: subPages
+              .map((subPage) => ListTile(
+                  title: Text(subPage.title),
+                  onTap: () {
+                    selectPage(subPage);
+                  }))
+              .toList(),
         ),
       ),
       body: subPage.samplePage,
