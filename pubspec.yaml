@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   google_fonts: ^0.3.9
   flutter_neumorphic: ^1.0.1
