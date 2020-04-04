@@ -1,4 +1,5 @@
 import 'package:cv/ui/page/playground/implicit/implicit_animations.dart';
+import 'package:cv/ui/page/playground/staggered/staggered_animations.dart';
 import 'package:flutter/material.dart';
 
 class PlaygroundPage extends StatelessWidget {
@@ -17,6 +18,16 @@ class PlaygroundPage extends StatelessWidget {
           },
         ),
         ListTile(
+          leading: Icon(Icons.local_movies),
+          title: Text('Staggered Animations'),
+          subtitle: Text('Multiple animations combined into one'),
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => StaggeredAnimationsPage()));
+          },
+        ),
+        ListTile(
+          trailing: Text('soon'),
           leading: Icon(Icons.all_inclusive),
           title: Text('Explicit Animations'),
           subtitle:
@@ -24,12 +35,14 @@ class PlaygroundPage extends StatelessWidget {
           isThreeLine: true,
         ),
         ListTile(
+          trailing: Text('soon'),
           leading: Icon(Icons.flare),
           title: Text('Animation Frameworks'),
-          subtitle: Text('Flare and Lottie'),
+          subtitle: Text('Flare/Rave and Lottie'),
           isThreeLine: true,
         ),
         ListTile(
+          trailing: Text('soon'),
           leading: Icon(Icons.category),
           title: Text('UI Challenges'),
           subtitle: Text('Remakes of existing UI ideas'),
