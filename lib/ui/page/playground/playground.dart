@@ -1,3 +1,4 @@
+import 'package:cv/ui/page/playground/explicit/explicit_animations.dart';
 import 'package:cv/ui/page/playground/implicit/implicit_animations.dart';
 import 'package:cv/ui/page/playground/staggered/staggered_animations.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,10 @@ class PlaygroundPage extends StatelessWidget {
           subtitle:
               Text('SomethingTransition, AnimatedBuilder, AnimatedWidget'),
           isThreeLine: true,
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ExplicitAnimationsPage()));
+          },
         ),
         ListTile(
           trailing: Text('soon'),
