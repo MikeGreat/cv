@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/VizGhar/cv)
+
 # My Curriculum application
 
 I have tendency to over-complicate things or, as some says, I'm perfectionist (God I hate that
